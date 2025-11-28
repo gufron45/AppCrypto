@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
     component: HomePage
   },
   {
-    path: '/cryptp',
+    path: '/crypto',
     name: 'Crypto',
     component: CryptoPage
   }
