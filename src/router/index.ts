@@ -6,7 +6,7 @@ import CryptoPage from '@/views/CryptoPage.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/cuaca'
+    redirect: '/crypto'
   },
   {
     path: '/home',
