@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import HomePage from '../views/HomePage.vue'
-import CuacaPage from '@/views/CuacaPage.vue';
+import CryptoPage from '@/views/CryptoPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,9 +14,9 @@ const routes: Array<RouteRecordRaw> = [
     component: HomePage
   },
   {
-    path: '/cuaca',
-    name: 'Cuaca',
-    component: CuacaPage
+    path: '/cryptp',
+    name: 'Crypto',
+    component: CryptoPage
   }
 ]
 
