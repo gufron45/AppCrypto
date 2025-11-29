@@ -94,9 +94,9 @@ export default defineComponent({
           throw new Error(`HTTP ${res.status}`);
         }
         const json = await res.json();
-        // API returns { data: [ ... ], info: {...} }
+      
         const raw: any[] = Array.isArray(json.data) ? json.data : [];
-        // keep first 50 (API usually returns 100, tapi ukuran mobile)
+      
         this.coins = raw.slice(0, 50).map((c: any) => ({
           id: String(c.id),
           symbol: c.symbol,
@@ -106,7 +106,7 @@ export default defineComponent({
         }));
       } catch (err) {
         console.error('fetch error', err);
-        // keep UI graceful: empty list + message displayed
+       
         this.coins = [];
       } finally {
         this.loading = false;
@@ -119,7 +119,6 @@ export default defineComponent({
       if (Math.abs(p) >= 1) {
         return p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
       } else {
-        // up to 6 decimals but trim trailing zeros
         return p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 6 }).replace(/(\.\d*?[1-9])0+$/,'$1').replace(/\.0+$/,'');
       }
     },
