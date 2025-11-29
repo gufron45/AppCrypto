@@ -62,7 +62,7 @@ type CoinItem = {
   name: string;
   nameid?: string;
   rank: number;
-  price_usd: string; // API returns string
+  price_usd: string; 
   percent_change_24h?: string;
   percent_change_1h?: string;
   percent_change_7d?: string;
@@ -115,7 +115,7 @@ export default defineComponent({
     formatPrice(priceStr: string) {
       const p = Number(priceStr);
       if (Number.isNaN(p)) return priceStr;
-      // If price >= 1, show 2 decimals; if <1 show up to 6 decimals (trim trailing zeros)
+      // jika harga >= 1, tunjukan 2 desimal jika <1 tunjukan sampai 6 desimal
       if (Math.abs(p) >= 1) {
         return p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
       } else {
@@ -128,7 +128,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* Container */
+
 #container {
   display: flex;
   flex-direction: column;
@@ -136,7 +136,7 @@ export default defineComponent({
   padding-top: 8px;
 }
 
-/* Top controls (Refresh) */
+
 .top-controls {
   width: 95%;
   max-width: 420px;
@@ -145,27 +145,27 @@ export default defineComponent({
   margin-bottom: 10px;
 }
 
-/* loading text */
+
 .loading-text {
   text-align: center;
   color: #666;
   margin: 10px 0;
 }
 
-/* The list wrapper to constrain width on tablet/desktop */
+
 .list-wrapper {
   width: 95%;
   max-width: 420px;
   margin-bottom: 24px;
 }
 
-/* Each coin card */
+
 .coin-card {
   display: grid;
   grid-template-columns: 1fr 2fr 1.6fr;
   align-items: center;
   gap: 12px;
-  background: #fdeecb; /* light parchment like in mockup */
+  background: #fdeecb; 
   border: 1px solid #e2c87a;
   padding: 10px 12px;
   margin-bottom: 8px;
@@ -173,7 +173,7 @@ export default defineComponent({
   box-shadow: 0 0 0 3px rgba(0,0,0,0.0);
 }
 
-/* Left - Rank */
+
 .left .rank {
   font-size: 12px;
   color: #333;
@@ -186,7 +186,7 @@ export default defineComponent({
   margin-top: 6px;
 }
 
-/* Middle - Name & symbol */
+
 .middle .name {
   font-weight: 600;
   font-size: 14px;
@@ -198,7 +198,7 @@ export default defineComponent({
   margin-top: 6px;
 }
 
-/* Right - currency & price */
+
 .right {
   text-align: right;
 }
@@ -212,7 +212,7 @@ export default defineComponent({
   margin-top: 6px;
 }
 
-/* Responsive: on very small screens, stack some columns */
+/* untuk tampilan mobile dengan layar kecil */
 @media (max-width: 360px) {
   .coin-card {
     grid-template-columns: 1fr 2fr;
@@ -225,7 +225,7 @@ export default defineComponent({
   }
 }
 
-/* Make the Refresh button look like the mockup (rounded, blue) */
+
 ion-button {
   --border-radius: 8px;
   --background: #0275d8;
